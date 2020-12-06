@@ -10,9 +10,54 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
 
+//create array of inquirer questions to ask if entering a manager to the team
+let inquirerManager = [
+  {
+    type: "input",
+    message: "What is the name of the manager?",
+    name: "managerName",
+  },
+  {
+    type: "input:",
+    message: "What is the manager's ID?",
+    name: "managerId",
+  },
+  {
+    type: "input",
+    message: "What is the manager's email?",
+    name: "managerEmail",
+  },
+  {
+    type: "input",
+    message: "What is the manager's office phone number?",
+    name: "managerPhone",
+  },
+];
 
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
+inquirer.prompt([
+  //figure out what type of team member to enter
+  {
+    type: "list",
+    message: "What team member are you entering?",
+    name: "teamMember",
+    choices: ["Manager", "Engineer", "Intern"],
+  },
+]);
+
+//need to figure out how to get this switch statement in the inquirer prompt
+switch (teamMember) {
+  case "Manager":
+    inquirerManager;
+    break;
+  case "Engineer":
+    inquirerEngineer;
+    break;
+  case "Intern":
+    inquirerIntern;
+    break;
+}
 
 // After the user has input all employees desired, call the `render` function (required
 // above) and pass in an array containing all employee objects; the `render` function will
