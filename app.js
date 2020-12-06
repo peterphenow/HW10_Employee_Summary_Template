@@ -34,7 +34,7 @@ let inquirerManager = [
   },
 ];
 
-//create list of questions for entering an engineer
+//create an array of questions for entering an engineer
 let inquirerEngineer = [
   {
     type: "input",
@@ -55,6 +55,30 @@ let inquirerEngineer = [
     type: "input",
     message: "What is the engineer's GitHub name?",
     name: "engineerGithub",
+  },
+];
+
+//create an array of questions for entering an intern
+let inquirerIntern = [
+  {
+    type: "input",
+    message: "What is the name of the intern?",
+    name: "internName",
+  },
+  {
+    type: "input:",
+    message: "What is the intern's ID?",
+    name: "internId",
+  },
+  {
+    type: "input",
+    message: "What is the intern's email?",
+    name: "internEmail",
+  },
+  {
+    type: "input",
+    message: "What is the name of the intern's school?",
+    name: "internSchool",
   },
 ];
 
