@@ -34,6 +34,30 @@ let inquirerManager = [
   },
 ];
 
+//create list of questions for entering an engineer
+let inquirerEngineer = [
+  {
+    type: "input",
+    message: "What is the name of the engineer?",
+    name: "engineerName",
+  },
+  {
+    type: "input:",
+    message: "What is the engineer's ID?",
+    name: "engineerId",
+  },
+  {
+    type: "input",
+    message: "What is the engineer's email?",
+    name: "engineerEmail",
+  },
+  {
+    type: "input",
+    message: "What is the engineer's GitHub name?",
+    name: "engineerGithub",
+  },
+];
+
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
 inquirer.prompt([
