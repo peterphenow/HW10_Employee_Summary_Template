@@ -126,8 +126,39 @@ let addManager = () => {
 
       const employee = new Manager(name, id, email, officeNumber);
       finalEmployeeArr.push(employee);
-      //addMoreEmployees();
-      console.log(finalEmployeeArr);
+      //direct to ask if another employee needs to be entered
+      addMoreEmployees();
+      //console.log(finalEmployeeArr);
+    });
+};
+
+//function to ask if another employee needs to be entered
+let addMoreEmployees = () => {
+  inquirer
+    .prompt([
+      {
+        type: "list",
+        message: "Do you want to add another employee?",
+        name: "addAnother",
+        choices: ["Yes, an engineer", "Yes, an intern", "No"],
+      },
+    ])
+    //directs to another function based on answer
+    .then(function (data) {
+      switch (data.addAnother) {
+        case "Yes, an engineer":
+          console.log("create engineer...");
+          //addEngineer();
+          break;
+        case "Yes, an intern":
+          console.log("create intern...");
+          //addIntern();
+          break;
+        case "No":
+          console.log("No...");
+          //may need to have some other function here to render html...
+          break;
+      }
     });
 };
 
