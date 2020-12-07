@@ -68,11 +68,11 @@ let addMoreEmployees = () => {
     .then(function (data) {
       switch (data.addAnother) {
         case "Yes, an engineer":
-          console.log("create engineer...");
+          console.log("-----------create engineer-----------");
           addEngineer();
           break;
         case "Yes, an intern":
-          console.log("create intern...");
+          console.log("-----------create intern-----------");
           addIntern();
           break;
         case "No":
