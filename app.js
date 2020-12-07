@@ -10,125 +10,126 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
 
+//create an array to hold employee objects once created.
+const finalEmployeeArr = [];
+
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
-inquirer.prompt([
-  //figure out what type of team member to enter
-  {
-    type: "list",
-    message: "What team member are you entering?",
-    name: "teamMember",
-    choices: ["Manager", "Engineer", "Intern"],
-  },
-  {
-    type: "input",
-    message: "What is the name of the manager?",
-    name: "managerName",
-    when: function (answers) {
-      //only run if user is entering a manager
-      return answers.teamMember === "Manager";
-    },
-  },
-  {
-    type: "input:",
-    message: "What is the manager's ID?",
-    name: "managerId",
-    when: function (answers) {
-      //only run if user is entering a manager
-      return answers.teamMember === "Manager";
-    },
-  },
-  {
-    type: "input",
-    message: "What is the manager's email?",
-    name: "managerEmail",
-    when: function (answers) {
-      //only run if user is entering a manager
-      return answers.teamMember === "Manager";
-    },
-  },
-  {
-    type: "input",
-    message: "What is the manager's office phone number?",
-    name: "managerPhone",
-    when: function (answers) {
-      //only run if user is entering a manager
-      return answers.teamMember === "Manager";
-    },
-  },
-  {
-    type: "input",
-    message: "What is the name of the engineer?",
-    name: "engineerName",
-    when: function (answers) {
-      //only run if user is entering an engineer
-      return answers.teamMember === "Engineer";
-    },
-  },
-  {
-    type: "input:",
-    message: "What is the engineer's ID?",
-    name: "engineerId",
-    when: function (answers) {
-      //only run if user is entering an engineer
-      return answers.teamMember === "Engineer";
-    },
-  },
-  {
-    type: "input",
-    message: "What is the engineer's email?",
-    name: "engineerEmail",
-    when: function (answers) {
-      //only run if user is entering an engineer
-      return answers.teamMember === "Engineer";
-    },
-  },
-  {
-    type: "input",
-    message: "What is the engineer's GitHub name?",
-    name: "engineerGithub",
-    when: function (answers) {
-      //only run if user is entering an engineer
-      return answers.teamMember === "Engineer";
-    },
-  },
-  {
-    type: "input",
-    message: "What is the name of the intern?",
-    name: "internName",
-    when: function (answers) {
-      //only run if user is entering an intern
-      return answers.teamMember === "Intern";
-    },
-  },
-  {
-    type: "input:",
-    message: "What is the intern's ID?",
-    name: "internId",
-    when: function (answers) {
-      //only run if user is entering an intern
-      return answers.teamMember === "Intern";
-    },
-  },
-  {
-    type: "input",
-    message: "What is the intern's email?",
-    name: "internEmail",
-    when: function (answers) {
-      //only run if user is entering an intern
-      return answers.teamMember === "Intern";
-    },
-  },
-  {
-    type: "input",
-    message: "What is the name of the intern's school?",
-    name: "internSchool",
-    when: function (answers) {
-      //only run if user is entering an intern
-      return answers.teamMember === "Intern";
-    },
-  },
-]);
+let addManager = () => {
+  inquirer
+    .prompt([
+      //figure out what type of team member to enter
+      // {
+      //   type: "list",
+      //   message: "What team member are you entering?",
+      //   name: "teamMember",
+      //   choices: ["Manager", "Engineer", "Intern"],
+      // },
+      {
+        type: "input",
+        message: "What is the name of the manager?",
+        name: "managerName",
+      },
+      {
+        type: "input:",
+        message: "What is the manager's ID?",
+        name: "managerId",
+      },
+      {
+        type: "input",
+        message: "What is the manager's email?",
+        name: "managerEmail",
+      },
+      {
+        type: "input",
+        message: "What is the manager's office phone number?",
+        name: "managerPhone",
+      },
+      // {
+      //   type: "input",
+      //   message: "What is the name of the engineer?",
+      //   name: "engineerName",
+      //   when: function (answers) {
+      //     //only run if user is entering an engineer
+      //     return answers.teamMember === "Engineer";
+      //   },
+      // },
+      // {
+      //   type: "input:",
+      //   message: "What is the engineer's ID?",
+      //   name: "engineerId",
+      //   when: function (answers) {
+      //     //only run if user is entering an engineer
+      //     return answers.teamMember === "Engineer";
+      //   },
+      // },
+      // {
+      //   type: "input",
+      //   message: "What is the engineer's email?",
+      //   name: "engineerEmail",
+      //   when: function (answers) {
+      //     //only run if user is entering an engineer
+      //     return answers.teamMember === "Engineer";
+      //   },
+      // },
+      // {
+      //   type: "input",
+      //   message: "What is the engineer's GitHub name?",
+      //   name: "engineerGithub",
+      //   when: function (answers) {
+      //     //only run if user is entering an engineer
+      //     return answers.teamMember === "Engineer";
+      //   },
+      // },
+      // {
+      //   type: "input",
+      //   message: "What is the name of the intern?",
+      //   name: "internName",
+      //   when: function (answers) {
+      //     //only run if user is entering an intern
+      //     return answers.teamMember === "Intern";
+      //   },
+      // },
+      // {
+      //   type: "input:",
+      //   message: "What is the intern's ID?",
+      //   name: "internId",
+      //   when: function (answers) {
+      //     //only run if user is entering an intern
+      //     return answers.teamMember === "Intern";
+      //   },
+      // },
+      // {
+      //   type: "input",
+      //   message: "What is the intern's email?",
+      //   name: "internEmail",
+      //   when: function (answers) {
+      //     //only run if user is entering an intern
+      //     return answers.teamMember === "Intern";
+      //   },
+      // },
+      // {
+      //   type: "input",
+      //   message: "What is the name of the intern's school?",
+      //   name: "internSchool",
+      //   when: function (answers) {
+      //     //only run if user is entering an intern
+      //     return answers.teamMember === "Intern";
+      //   },
+      // },
+    ])
+    .then(function (data) {
+      const name = data.managerName;
+      const id = data.managerId;
+      const email = data.managerEmail;
+      const officeNumber = data.managerPhone;
+
+      const employee = new Manager(name, id, email, officeNumber);
+      finalEmployeeArr.push(employee);
+      //addMoreEmployees();
+      console.log(finalEmployeeArr);
+    });
+};
 
 // After the user has input all employees desired, call the `render` function (required
 // above) and pass in an array containing all employee objects; the `render` function will
@@ -149,3 +150,5 @@ inquirer.prompt([
 // for further information. Be sure to test out each class and verify it generates an
 // object with the correct structure and methods. This structure will be crucial in order
 // for the provided `render` function to work! ```
+
+addManager();
