@@ -152,7 +152,7 @@ let addMoreEmployees = () => {
           break;
         case "Yes, an intern":
           console.log("create intern...");
-          //addIntern();
+          addIntern();
           break;
         case "No":
           console.log("No...");
@@ -193,6 +193,44 @@ let addEngineer = () => {
       const github = data.engineerGithub;
 
       const employee = new Engineer(name, id, email, github);
+      finalEmployeeArr.push(employee);
+      //console.log(finalEmployeeArr);
+      //direct to ask if another employee needs to be entered
+      addMoreEmployees();
+    });
+};
+
+let addIntern = () => {
+  inquirer
+    .prompt([
+      {
+        type: "input",
+        message: "What is the name of the intern?",
+        name: "internName",
+      },
+      {
+        type: "input:",
+        message: "What is the intern's ID?",
+        name: "internId",
+      },
+      {
+        type: "input",
+        message: "What is the intern's email?",
+        name: "internEmail",
+      },
+      {
+        type: "input",
+        message: "What is the name of the intern's school?",
+        name: "internSchool",
+      },
+    ])
+    .then(function (data) {
+      const name = data.internName;
+      const id = data.internId;
+      const email = data.internEmail;
+      const school = data.internSchool;
+
+      const employee = new Intern(name, id, email, school);
       finalEmployeeArr.push(employee);
       //console.log(finalEmployeeArr);
       //direct to ask if another employee needs to be entered
