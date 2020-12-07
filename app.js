@@ -18,13 +18,6 @@ const finalEmployeeArr = [];
 let addManager = () => {
   inquirer
     .prompt([
-      //figure out what type of team member to enter
-      // {
-      //   type: "list",
-      //   message: "What team member are you entering?",
-      //   name: "teamMember",
-      //   choices: ["Manager", "Engineer", "Intern"],
-      // },
       {
         type: "input",
         message: "What is the name of the manager?",
@@ -45,78 +38,6 @@ let addManager = () => {
         message: "What is the manager's office phone number?",
         name: "managerPhone",
       },
-      // {
-      //   type: "input",
-      //   message: "What is the name of the engineer?",
-      //   name: "engineerName",
-      //   when: function (answers) {
-      //     //only run if user is entering an engineer
-      //     return answers.teamMember === "Engineer";
-      //   },
-      // },
-      // {
-      //   type: "input:",
-      //   message: "What is the engineer's ID?",
-      //   name: "engineerId",
-      //   when: function (answers) {
-      //     //only run if user is entering an engineer
-      //     return answers.teamMember === "Engineer";
-      //   },
-      // },
-      // {
-      //   type: "input",
-      //   message: "What is the engineer's email?",
-      //   name: "engineerEmail",
-      //   when: function (answers) {
-      //     //only run if user is entering an engineer
-      //     return answers.teamMember === "Engineer";
-      //   },
-      // },
-      // {
-      //   type: "input",
-      //   message: "What is the engineer's GitHub name?",
-      //   name: "engineerGithub",
-      //   when: function (answers) {
-      //     //only run if user is entering an engineer
-      //     return answers.teamMember === "Engineer";
-      //   },
-      // },
-      // {
-      //   type: "input",
-      //   message: "What is the name of the intern?",
-      //   name: "internName",
-      //   when: function (answers) {
-      //     //only run if user is entering an intern
-      //     return answers.teamMember === "Intern";
-      //   },
-      // },
-      // {
-      //   type: "input:",
-      //   message: "What is the intern's ID?",
-      //   name: "internId",
-      //   when: function (answers) {
-      //     //only run if user is entering an intern
-      //     return answers.teamMember === "Intern";
-      //   },
-      // },
-      // {
-      //   type: "input",
-      //   message: "What is the intern's email?",
-      //   name: "internEmail",
-      //   when: function (answers) {
-      //     //only run if user is entering an intern
-      //     return answers.teamMember === "Intern";
-      //   },
-      // },
-      // {
-      //   type: "input",
-      //   message: "What is the name of the intern's school?",
-      //   name: "internSchool",
-      //   when: function (answers) {
-      //     //only run if user is entering an intern
-      //     return answers.teamMember === "Intern";
-      //   },
-      // },
     ])
     .then(function (data) {
       const name = data.managerName;
@@ -156,6 +77,7 @@ let addMoreEmployees = () => {
           break;
         case "No":
           console.log("No...");
+          console.log(finalEmployeeArr);
           //may need to have some other function here to render html...
           break;
       }
