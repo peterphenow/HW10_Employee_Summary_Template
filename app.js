@@ -162,6 +162,16 @@ let addIntern = () => {
 
 //function to write the html output
 const createFile = () => {
+  // creates a folder named 'output' if one is not created yet
+  //code found at https://www.geeksforgeeks.org/node-js-fs-mkdir-method/
+  fs.mkdir(path.join(__dirname, "output"), { recursive: true }, (err) => {
+    if (err) {
+      return console.error(err);
+    }
+    console.log("Directory created successfully!");
+  });
+
+  //writes the html file to the folder named 'output'
   fs.writeFile(outputPath, render(finalEmployeeArr), (err) =>
     err ? console.log(err) : console.log(`File successfully created in ${outputPath}`)
   );
