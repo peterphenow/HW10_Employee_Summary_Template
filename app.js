@@ -76,9 +76,11 @@ let addMoreEmployees = () => {
           addIntern();
           break;
         case "No":
-          console.log("No...");
-          console.log(finalEmployeeArr);
-          //may need to have some other function here to render html...
+          console.log("You have completed all entries");
+          //console.log(finalEmployeeArr);
+          // console.log(createHTML());
+          //console.log(renderMain);
+          createFile();
           break;
       }
     });
@@ -159,6 +161,41 @@ let addIntern = () => {
       addMoreEmployees();
     });
 };
+
+// const createHTML = () => {
+//   //console.log(render(finalEmployeeArr));
+//   render(finalEmployeeArr);
+
+//   createFile();
+// };
+
+const createFile = () => {
+  fs.writeFile(outputPath, render(finalEmployeeArr), (err) =>
+    err ? console.log(err) : console.log(`File successfully created in ${outputPath}`)
+  );
+};
+
+// const htmlStart = `
+// <!DOCTYPE html>
+// <html lang="en">
+//   <head>
+//     <meta charset="UTF-8" />
+//     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+//     <link
+//       rel="stylesheet"
+//       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+//       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+//       crossorigin="anonymous"
+//     />
+//     <title>My Team</title>
+//   </head>
+//   <body>
+// `;
+
+// const htmlEnd = `
+// </body>
+// </html>
+// `;
 
 // After the user has input all employees desired, call the `render` function (required
 // above) and pass in an array containing all employee objects; the `render` function will
