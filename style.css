@@ -1,3 +1,19 @@
-/* * {
-  background-color: red;
-} */
+.team-heading {
+  background-color: #eddcd2;
+}
+
+.card-header {
+  background-color: #cb997e;
+}
+
+body {
+  background-color: #f0efeb;
+}
+
+.card-body {
+  background-color: #fff1e6;
+}
+
+.list-group-item {
+  background-color: #fff1e6;
+}
