@@ -2,7 +2,7 @@
 
 # Employee Summary Template Generator
 
-## \*Description\*\*
+## **Description**
 
 The main concept of this assignment was to utilize Test Driven Development in order to create a dynamically generated HTML output based on user input with Node and Inquirer. Several tests were written before any other coding was done. Using these tests helped ensure a working application.
 
@@ -12,7 +12,13 @@ You may view the video file [here](https://github.com/peterphenow/HW10_Employee_
 
 ## **Screenshots**
 
-<img src="./assets/test results.png" alt="final test results" width="500" height="350">&nbsp;&nbsp;<img src="./assets/final webpage.png" alt="final webpage" width="500" height="350">
+#### **All tests pass**
+
+<img src="./assets/test results.png" alt="final test results" width="500" height="350">
+
+#### **Final Output**
+
+<img src="./assets/final webpage.png" alt="final webpage" width="500" height="350">
 
 ## **License**
 
