@@ -8,9 +8,13 @@ The main concept of this assignment was to utilize Test Driven Development in or
 
 ## **Link**
 
-You may view the video file [here](https://github.com/peterphenow/HW10_Employee_Summary_Template).
+You may view the video file [here](https://github.com/peterphenow/HW10_Employee_Summary_Template/blob/main/assets/walkthrough%20video.webm).
 
 ## **Screenshots**
+
+#### **GIF**
+
+![Walkthrough GIF](./assets/walkthrough.gif)
 
 #### **All tests pass**
 
