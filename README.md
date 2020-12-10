@@ -4,7 +4,7 @@
 
 ## **Description**
 
-The main concept of this assignment was to utilize Test Driven Development in order to create a dynamically generated HTML output based on user input with Node and Inquirer. Several tests were written before any other coding was done. Using these tests helped ensure a working application.
+The main concept of this assignment was to utilize Test Driven Development in order to create a dynamically generated HTML output based on user input with Node and Inquirer. Several tests were written before any other coding was done. Using test driven development helps ensure a higher code quality, better code flexibility, and easier code maintenance along with many other benefits.
 
 ## **Link**
 
