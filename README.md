@@ -12,10 +12,6 @@ You may view the video file [here](https://github.com/peterphenow/HW10_Employee_
 
 ## **Screenshots**
 
-#### **GIF**
-
-![Walkthrough GIF](./assets/walkthrough.gif)
-
 #### **All tests pass**
 
 <img src="./assets/test results.png" alt="final test results" width="500" height="350">
